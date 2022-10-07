@@ -8,20 +8,23 @@ public class Location
 {
     @Id
     @Column(name="location_id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int locationId;
+
     @Column(name = "longitude")
     private double lng;
+
     @Column(name = "latitude")
     private double ltd;
+
     @Column(name = "radius")
     private int radius;
+
     @Column(name = "address")
     private String address;
 
-    public Location(int locationId, double lng, double ltd, int radius, String address)
+    public Location(double lng, double ltd, int radius, String address)
     {
-        this.locationId = locationId;
         this.lng = lng;
         this.ltd = ltd;
         this.radius = radius;
@@ -32,6 +35,11 @@ public class Location
 
     public Location() { }
 
+    public Location(double lng, double ltd, int radius) {
+        this.lng = lng;
+        this.ltd = ltd;
+        this.radius = radius;
+    }
 
     public int getLocation_id() {
         return locationId;
