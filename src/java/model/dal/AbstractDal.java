@@ -12,7 +12,7 @@ public abstract class AbstractDal implements IDal
         return null;
     }
 
-    public Location findByParams(double lng, double ltd) {
+    public List<Location> findByParams(Location location) {
         return null;
     }
 

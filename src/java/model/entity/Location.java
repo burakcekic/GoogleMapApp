@@ -35,10 +35,10 @@ public class Location
 
     public Location() { }
 
-    public Location(double lng, double ltd, int radius) {
+    public Location(double lng, double ltd)
+    {
         this.lng = lng;
         this.ltd = ltd;
-        this.radius = radius;
     }
 
     public int getLocation_id() {

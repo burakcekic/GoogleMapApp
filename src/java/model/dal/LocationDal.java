@@ -59,14 +59,16 @@ public class LocationDal extends AbstractDal
     }
 
     @Override
-    public Location findByParams(double lng, double ltd)
+    public List<Location> findByParams(Location location)
     {
+
+        double lng = location.getLng();
+        double ltd = location.getLtd();
         Query query = session.createQuery(findStrQuery);
         query.setParameter("lng",lng);
         query.setParameter("ltd",ltd);
         List<Location> locations =  query.list();
-        Location location = locations.get(0);
-       return location;
+       return locations;
     }
 
 
