@@ -41,6 +41,7 @@ public class LocationController
             response.put("status",200);
             response.put("message","api successful");
 
+
             if (locations.size() > 0)
             {
                 Location location  = locations.get(0);
@@ -59,6 +60,8 @@ public class LocationController
                 HttpResponse httpResponse = httpClientManager.getHttpResponse(url);
 
                 JSONObject jsonObject = new JSONObject(httpResponse.body().toString());
+
+                System.out.println(url);
                 String resultStatus = jsonObject.getString("status");
                 if(resultStatus.equals("OK"))
                 {

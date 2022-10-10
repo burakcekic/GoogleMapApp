@@ -20,7 +20,7 @@ public class HttpClientManager implements IHttpClientService
         {
             String baseUrl = util.getProperties("api.base_url");
             String apiKey = util.getProperties("api.key");
-            url = baseUrl + "?keyword=cruise&location=" + ltd + "," + lng + "&radius=1500&key=" + apiKey;
+            url = baseUrl + "?keyword=cruise&location=" + ltd + "," + lng + "&radius="+radius+"&key=" + apiKey;
 
         }
         catch (IOException e )
